@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VI3NR: Variance Informed Initialization for Implicit Neural Representations</title>
+    <meta name="author"
+          content="Chamin Hewa Koneputugodage, Yizhak Ben-Shabat (Itzik), Sameera Ramasinghe, and Stephen Gould">
+    <meta name="description"
+          content="VI3NR CVPR paper project page">
+    <meta name="keywords" content="VI3NR, INR, Neural Network, Initialization, MLP, Variance Initialization, CVPR, CVPR2025">
+
+    <link rel="stylesheet" href="./css/index.css">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script> <!-- CDN link -->
+    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+
+<section class="hero">
+    <div class="default-container">
+        <div class="title-block">
+            <h1 class="title">VI<sup>3</sup>NR: Variance Informed Initialization for Implicit Neural Representations</h1>
+            <h2 class="venue">CVPR 2025</h2>
+        </div>
+        <div class="author-section">
+            <span class="author">
+                <a href="https://www.linkedin.com/in/chamin-hewa-koneputugodage-b3ba17148/">
+                    <img class="image" src="./images/chamin.jpg" alt="Chamin Hewa Koneputugodage">
+                </a> <br/>
+                <a href="https://www.linkedin.com/in/chamin-hewa-koneputugodage-b3ba17148/">Chamin Hewa
+                    <br> Koneputugodage*</a><sup>1</sup>
+            </span>
+            <span class="author">
+                <a href="https://www.itzikbs.com/">
+                    <img class="image" src="./images/itzik.jpg" alt="Yizhak Ben-Shabat (Itzik)">
+                </a> <br/>
+                <a href="https://www.itzikbs.com/">Yizhak Ben-Shabat <br> (Itzik)*</a><sup>1,2</sup>
+            </span>
+            <span class="author">
+                <a href="https://www.linkedin.com/in/sameeraramasinghe/">
+                    <img class="image" src="./images/sameera.png" alt="Sameera Ramasinghe">
+                </a> <br/>
+                <a href="https://www.linkedin.com/in/sameeraramasinghe/">Sameera Ramasinghe </a><sup>3</sup><br><a>&nbsp</a>
+            </span>
+            <span class="author">
+                <a href="https://cecs.anu.edu.au/people/stephen-gould/">
+                    <img class="image" src="./images/steve.jpg" alt="Stephen Gould">
+                </a> <br/>
+                <a href="https://cecs.anu.edu.au/people/stephen-gould/">Stephen Gould </a><sup>1</sup><br><a>&nbsp</a>
+            </span>
+        </div>
+
+        <div class="affiliation">
+            <sup>1</sup><a>The Australian National University</a>
+            &emsp;
+            <sup>2</sup><a>Roblox</a>
+            &emsp;
+            <sup>3</sup><a>Pluralis AI</a><br>
+            <a>*Equal Contribution</a>
+        </div>
+
+        <div class="links">
+<!--            <span class="link-block">-->
+<!--                <a href="https://arxiv.org/abs/2410.21643" class="button-80">-->
+<!--                    <img class="link-icon" src="./images/pdf.svg" alt="Paper">-->
+<!--                    <span> Paper</span>-->
+<!--                </a>-->
+<!--            </span>-->
+            <span class="link-block">
+                <a href="https://arxiv.org/abs/2410.21643" class="button-80">
+                    <img class="link-icon" src="./images/arxiv.png" alt="arxiv">
+                    <span> Arxiv (Coming Soon)</span>
+                </a>
+            </span>
+            <!-- <span class="link-block">
+                <a href="coming_soon.html" class="button-80">
+                    <img class="link-icon" src="./images/jupyter.svg" alt="Jupter Notebook">
+                    <span> Jupter Notebook</span>
+                </a>
+            </span> -->
+            <span class="link-block">
+                <a href="https://github.com/chumbyte/" class="button-80">
+                    <img class="link-icon" src="./images/github.svg" alt="Code">
+                    <span> Code (Coming Soon)</span>
+                </a>
+            </span>
+<!--            <span class="link-block">-->
+<!--                <a href="https://youtu.be/mmxTBAZYYys" class="button-80">-->
+<!--                    <img class="link-icon" src="./images/youtube.svg" alt="Video">-->
+<!--                    <span> Video</span>-->
+<!--                </a>-->
+<!--            </span>-->
+            <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=w2xC2JluMlk&ab_channel=TalkingPapersPodcast" class="button-80">
+                    <img class="link-icon" src="./images/youtube.svg" alt="Video">
+                    <span> Podcast</span>
+                </a>
+            </span> -->
+        </div>
+
+    </div>
+</section>
+
+
+<section class="abstract-section">
+    <div class="default-container">
+        <div class="abstract">
+            <h2 class="abstract-title">Abstract</h2>
+            <p class="abstract-text">
+                Implicit Neural Representations (INRs) are a versatile and powerful tool for encoding various forms of data, including images, videos, sound, and 3D shapes.
+                A critical factor in the success of INRs is the initialization of the network, which can significantly impact the convergence and accuracy of the learned model.
+                Unfortunately, commonly used neural network initializations are not widely applicable for many activation functions, especially those used by INRs.
+                In this paper, we improve upon previous initialization methods by deriving an initialization that has stable variance across layers, and applies to any activation function. We show that this generalizes many previous initialization methods, and has even better stability for well studied activations.
+                We also show that our initialization leads to improved results with INR activation functions in multiple signal modalities.
+                Our approach is particularly effective for Gaussian INRs, where we demonstrate that the theory of our initialization matches with task performance in multiple experiments, allowing us to achieve improvements in image, audio, and 3D surface reconstruction.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="teaser-results">
+    <div class="default-container">
+        <h2 class="teaser-title">tl;dr</h2>
+        <p style="text-align: justify">
+            We introduce an initialization for MLP networks that works for any activation function, thus generalizing Xavier
+            <sup><a href="#refXavier">1</a></sup>
+            and Kaiming initialization
+            <sup><a href="#refKaiming">2</a></sup>
+            (which were derived for Tanh and ReLU respectively).
+            This is important for implicit neural representations (INRs) as the literature uses (and keeps proposing) activation functions that are very different to classic activation functions.
+            SIREN
+            <sup><a href="#refSIREN">4</a></sup>,
+            which uses sine activations and provides an initialization for them, shows the importance of initialization tailored to the activation function, and we build heavily off them.
+            We show that our initialization does a better job compared to previous initializations (we can maintain steady variance in both the forward and backward pass instead of just one), and show significant task
+            performance improvement in INR tasks.
+        </p>
+        <h2 class="teaser-title">Our Initialization</h2>
+        
+        <p style="text-align: justify">
+            Consider a general MLP network with activation function \(f\):
+        </p>
+        <img class="divergence-expl-img" src="./images/VIIINR_notation_diagram.png" alt="teaser">
+    </div>
+    <div class="default-container">
+        <p style="text-align: justify">
+            A standard approach to initializing networks is to ensure the variance of the preactivations at each layer is the same, and the variance of the gradients of loss w.r.t. the
+            preactivations at each layer is the same. 
+            We first show that the distribution of preactivations at layer \(i\) (i.e. the elements of \(z_i\)), converges in distribution to
+            \[ \mathcal{N}\left(0, M_i\left(\mu^2(x_i)+\sigma^2(x_i)\right)\sigma^2(W_i)\right) \]
+            (note that this was first shown by Kumar (2017) <sup><a href="#refKumar">3</a></sup>, however we provide a more rigourous proof by generalizing Sitzmann et al.'s proof for SIREN networks
+            <sup><a href="#refSIREN">4</a></sup>).
+            <br><br>
+
+            This means that the variance of the preactivations at layer \(i\) (\(z_i\)) depends on the variance of the weight at that layer (\(W_i\)) and the distribution 
+            of the input at that layer (\(x_i\)). The key to our approach is to set the distribution of the preactivations at each layer to be \(\mathcal{N}\left(0, \sigma_p^2\right)\)
+            where we choose \(\sigma_p\). To do this, we initialize the weights at layer \(i\) to have variance
+            \[ \sigma^2(W_i) = \frac{\sigma_p^2}{M_i\left(\mu^2(x_i)+\sigma^2(x_i)\right)} \]
+            where the statistics of the output of the previous layer can be computed using the fact that the preactivations in that layer have been set to have distribution
+            \(\mathcal{N}\left(0, \sigma_p^2\right)\):
+            \[ \mu(x_i) = \mu(f(z_{i-1})) = \mathbf{E}_{z\sim \mathcal{N}(0,\sigma^2_p)}\left[f(z)\right] \]
+            \[ \sigma^2(x_i) = \sigma^2(f(z_{i-1})) = \mathbf{Var}_{z\sim \mathcal{N}(0,\sigma^2_p)}\left[f(z)\right]. \]
+            <br>
+
+            Calculating these statistics analytically is difficult depending on \(f\). 
+            We use Monte Carlo sampling, which we show is efficient and accurate unlike previous approaches.
+            <br><br>
+
+            Similarly, we derive the condition for the backward pass:
+            \[ \sigma^2(W_i) = \frac{1}{M_{i+1}\left(\mu^2(f'(z_i)) + \sigma^2(f'(z_i))\right)}. \]
+            <br>
+
+            Unlike previous approaches (e.g. Xavier, Kaiming) we can make the condition for the forward and backward pass both hold due to \(\sigma_p\) being a free parameter for us to set.
+            Thus we need to find \(\sigma_p\) that satisfies
+            \[ \sigma_p^2 \frac{M_{i+1}}{M_i}  \frac{\mu^2(f'(z_i)) + \sigma^2(f'(z_i))}{\mu^2(x_i)+\sigma^2(x_i)} = 1. \]
+            This is non-trivial to do analytically as many of the terms are expectations over the distribution \(\mathcal{N}\left(0, \sigma_p^2\right)\), we instead perform a fast grid search
+            to find the \(\sigma_p\) that makes the left hand side as close to 1 as possible.
+        </p>
+        <h3 >Deriving Xavier and Kaiming init </h3>
+        <p style="text-align: justify">                       
+            Our init is a more general form than Xavier and Kaiming init, so we can easily derive them from our init.
+            Note that when \(\sigma_p=1\) and the asumptions for Xavier init hold (\(f(x)\approx x \implies \mu(x_i)=0,\sigma^2(x_i)=1\)), our conditions reduce to Xavier init's conditions
+            \[ \sigma^2(W_i) = \frac{1}{M_i} \text{ (Forward Pass)}\]
+            \[ \sigma^2(W_i) = \frac{1}{M_{i+1}} \text{ (Backward Pass)} \]
+            and when \(\sigma_p=1\) and we have ReLU then we get Kaiming init (see paper for explanation)
+            \[ \sigma^2(W_i) = \frac{2}{M_i} \text{ (Forward Pass)}\]
+            \[ \sigma^2(W_i) = \frac{2}{M_{i+1}} \text{ (Backward Pass)}\]
+
+            As both initialization cannot satisfy both conditions at the same time like ours, Xavier init takes the average of their conditions, and Kaiming suggests to use either.
+             
+        </p>
+        <h3 >Comparison to PyTorch, and proper "gain" </h3>
+        <p style="text-align: justify">
+            PyTorch <sup><a href="#refPyTorch">5</a></sup> generalizes Xavier and Kaiming init by introducing "gain", so for forward pass Kaiming (they call this fan-in Kaiming)
+            \[ \sigma^2(W_i) = \text{gain}^2(f)\frac{1}{M_i} \]
+            While never explictly defined, it is motivated as a scaling term on the weight's variance to compensate for the activation function, and is often implied to be
+            \[ \text{gain}^2(f) \approx \frac{\sigma^2(z_i)}{\sigma^2(f(z_i))} \]
+            which is not well defined. As a result, it is often treated as a hyperparameter to brute force search for a value that keeps the variance through the network stable.
+
+            Our formulation makes it well defined due to \(\sigma_p\) (the fact that we are setting the preactivation variance of the current layer given that it has been set for the previous layer),
+            thus for the forward pass
+            \[ \text{gain}^2(f, \sigma_p) = \frac{\sigma_p^2}{\mathbf{E}_{z\sim \mathcal{N}(0,\sigma^2_p)}\left[f(z)\right]^2+\mathbf{Var}_{z\sim \mathcal{N}(0,\sigma^2_p)}\left[f(z)\right]}. \]
+
+        </p>
+    </div>
+</section>
+
+<section class="main-video-section">
+    <div class="default-container">
+        <div class="main-video">
+            <h2 class="main-video-title">Video</h2>
+<!--             <div class="main-video-div">-->
+<!--                <iframe src="https://www.youtube.com/embed/mmxTBAZYYys?si=IJ94t_ZKrCclAVl3"-->
+<!--                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
+<!--            </div>-->
+            <p style="text-align: justify"><b>Coming Soon!</b></p>
+        </div>
+    </div>
+</section>
+
+
+<section class="reference-section">
+    <div class="default-container">
+        <div class="ref">
+            <h2 class="ref-title">BibTeX</h2>
+            <div class="bibtex">
+<pre><code>@inproceedings{ChaminInit2025,
+    title={VI$^3$NR: Variance Informed Initialization for Implicit Neural Representations},
+    author={Hewa Koneputugodage, Chamin and Ben-Shabat, Yizhak and Ramasinghe, Sameera and Gould, Stephen},
+    booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    year={2025}
+  }</code></pre>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="references">
+    <h2>References</h2>
+    <ol>
+      <!-- Xavier et al. (2010) -->
+      <li id="refXavier">Glorot, X., & Bengio, Y. (2010). 
+        <i>Understanding the difficulty of training deep feedforward neural networks</i>. 
+        <b>International Conference on Artificial Intelligence and Statistics</b>. 
+        <a href="https://proceedings.mlr.press/v9/glorot10a.html" target="_blank">Link</a>
+      </li>
+
+      <!-- Kaiming et al. (2015) -->
+      <li id="refKaiming">He, K., Zhang, X., Ren, S., & Sun, J. (2015). 
+        <i>Delving Deep into Rectifiers: Surpassing Human-Level Performance on ImageNet Classification</i>.
+        <b>IEEE International Conference on Computer Vision (ICCV)</b>. 
+        <a href="https://arxiv.org/abs/1502.01852" target="_blank">Link</a>
+      </li>
+
+      <!-- Kumar (2017) -->
+      <li id="refKumar">Kumar, S. K. (2017). 
+        <i>On weight initialization in deep neural networks</i>.
+        <b>arXiv preprint</b> arXiv:1704.08863. 
+        <a href="https://arxiv.org/abs/1704.08863" target="_blank">Link</a>
+      </li>
+
+      <!-- Sitzmann et al. (2020) -->
+      <li id="refSIREN">Sitzmann, V., Martel, J., Bergman, A., Lindell, D., & Wetzstein, G. (2020). 
+        <i>Implicit neural representations with periodic activation functions</i>.
+        <b>Advances in Neural Information Processing Systems (NeurIPS)</b>. 
+        <a href="https://www.vincentsitzmann.com/siren/" target="_blank">Link</a>
+      </li>
+
+      <!-- Paszke et al. (2019) -->
+      <li id="refPyTorch">Paszke, A., Gross, S., Massa, F., Lerer, A., Bradbury, J., Chanan, G., Killeen, T., Lin, Z., Gimelshein, N., Antiga, L., Desmaison, A., Kopf, A., Yang, E., DeVito, Z., Raison, M., Tejani, A., Chilamkurthy, S., Steiner, B., Fang, L., Bai, J., & Chintala, S. (2019). 
+        <i>PyTorch: An Imperative Style, High-Performance Deep Learning Library</i>.
+        <b>Advances in Neural Information Processing Systems (NeurIPS 32)</b>. 
+        <a href="https://pytorch.org/" target="_blank">Link</a>
+      </li>
+    </ol>
+</section>
+
+
+
+
+</body>
+</html>
